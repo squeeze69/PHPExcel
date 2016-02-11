@@ -287,10 +287,6 @@ class PHPExcel_CachedObjectStorage_Memcached extends PHPExcel_CachedObjectStorag
      */
     public static function cacheMethodIsAvailable()
     {
-        if (!function_exists('memcache_add')) {
-            return false;
-        }
-
-        return true;
+        return class_exists('Memcached');
     }
 }
